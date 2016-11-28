@@ -7,8 +7,23 @@ import java.util.Scanner;
 public class Uppg1 {
 
     public static void main(String[] args) {
-            del2();
+            Scanner src = new Scanner(System.in);
 
+            System.out.println("Vilken uppgift vill du köra? Välj mellan 1-3");
+
+            int input = src.nextInt();
+
+
+
+            if (input == 1) {
+                del1();
+            } else if (input == 2) {
+                    del2();
+            } else if (input == 3) {
+                del3();
+            } else {
+                System.out.println("Du angav inte 1,2 eller 3. Var god starta om programet.");
+            }
 
 
     }
@@ -52,7 +67,7 @@ public class Uppg1 {
             num++;
 
         }
-        
+
         System.out.println(summa + " " + num);
 
     }
@@ -60,8 +75,30 @@ public class Uppg1 {
 
     //Uppgift 5.8
     public static void del3() {
+        Scanner s =  new Scanner(System.in);
+
+        System.out.println("Enter a string");
+
+        String input = s.nextLine();
+
+        char[] inputchar = new char[input.length()]; //inputet i en char array
+
+        char[] outputchar = new char[input.length()]; //inputet baklänges.
+
+        inputchar = input.toCharArray();
 
 
+        for(int i = input.length()-1; i >= 0; i--) { //gör ordet baklänges
+
+            outputchar[(input.length()-i - 1)] = inputchar[i];
+        }
+        if (input.equalsIgnoreCase(String.valueOf(outputchar))) { //kollar om ordet är samma baklänges
+
+            System.out.println("same");
+
+        } else {
+            System.out.println("not same");
+        }
 
     }
 }
