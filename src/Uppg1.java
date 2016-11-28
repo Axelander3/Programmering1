@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 /**
@@ -6,7 +7,7 @@ import java.util.Scanner;
 public class Uppg1 {
 
     public static void main(String[] args) {
-            del1();
+            del2();
 
 
 
@@ -40,8 +41,19 @@ public class Uppg1 {
 
     //Uppgift 5.7
     public static void del2() {
+        double summa = 0;
 
+        double num = 1;
 
+        while((1/num) > 0.00001) {
+            summa += (1/num);
+            num++;
+            summa -= (1/num);
+            num++;
+
+        }
+        
+        System.out.println(summa + " " + num);
 
     }
 
